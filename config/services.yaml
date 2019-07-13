@@ -4,6 +4,8 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    locale: "en"
+    hello_message: "Hello from service"
 
 services:
     # default configuration for services in *this* file
@@ -11,6 +13,9 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
+        bind:
+            #$message: "Hello from Services"
+            $message: "%hello_message"
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:
@@ -23,5 +28,21 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+
+    #Required when autowire(line:11) is set to false so we are manually injecting dependencies.
+    #App\Controller\BlogController: ['@App\Services\Greeting']
+
+    #Required when autowire(line:11) is set to false so we are manually injecting dependencies.
+    #Required due it is being used to log stuff. In this case we return the logger object, and that is in:
+    #monolog->logger.php (can be seen in vendor/monolog/monolog/src/...
+    #App\Services\Greeting: ['@monolog.logger']
+
+    #When autowire(line:11) is enabled, it is enough to declare vaf data types that are causing conflict
+    #such as string vs type-hint.
+    App\Services\Greeting:
+        arguments:
+            #$message = "Hello from Services" #Direct value
+            #$message = "%hello_message" #Identifier from parameters(line:6)
+            #Or we can just bind(line:16) under services/defaults
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
