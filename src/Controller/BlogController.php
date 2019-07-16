@@ -6,7 +6,7 @@ namespace App\Controller;
 use App\Services\Greeting;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\ROute;
+use Symfony\Component\Routing\Annotation\Route;
 
 
 class BlogController extends AbstractController
@@ -25,8 +25,11 @@ class BlogController extends AbstractController
     /**
      * @Route("/", name="blog_index")
      */
+
     public function index(Request $request)
     {
         return $this->render("base.html.twig", ["message" => $this->greeting->greet($request->get("name"))]);
     }
+
+
 }

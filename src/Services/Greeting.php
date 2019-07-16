@@ -1,8 +1,7 @@
 <?php
 
 
-namespace App\Services; //Modified because I accidentally gave folder a different name which becomes annoying.
-
+namespace App\Services;
 
 use Psr\Log\LoggerInterface;
 
