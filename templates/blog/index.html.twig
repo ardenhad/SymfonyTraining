@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Blog index!{% endblock %}
+
+{% block body %}
+    {% for id, post in posts %}
+        <p><a href="{{ path("blog_show", {"id": id}) }}">ID {{ id }}</a></p>
+        {# Find more at: https://twig.symfony.com/doc/2.x/index.html #}
+        <h3>{{ post.title|upper }}</h3>
+        <p>{{ post.text }}</p>
+    {% endfor %}
+{% endblock %}
