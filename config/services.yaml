@@ -28,6 +28,11 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    #Symfony cannot autowire string so we have to do it manually.
+    App\Twig\AppExtension:
+        arguments:
+            $locale: "%locale%"
+
 
     #Required when autowire(line:11) is set to false so we are manually injecting dependencies.
     #App\Controller\BlogController: ['@App\Services\Greeting']

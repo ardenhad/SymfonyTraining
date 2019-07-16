@@ -8,4 +8,14 @@
     <p>{{ post.text }}</p>
     <p>{{ post.date|date("H:i:s") }}</p>
     {{ 560|price }}
+    Here is the current locale {{ locale }}
+
+    {# message is defined in config/package/twig.yaml #}
+    <p>{{ message }}</p>
+
+    <p>Env: {{ app.environment }}</p>
+    <p>User: {{ app.user }}</p>
+    <p>Request: {{ app.request }}</p>
+    <p>Session started: {{ app.session.isStarted() }}</p>
+    <p>Debug {{ app.debug }}</p>
 {% endblock %}
