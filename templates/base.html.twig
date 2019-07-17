@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Welcome!{% endblock %}</title>
+    {# For some reason, not mentioned in tutorial yet exists...
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset("build/css/app.css") }}">
     {% endblock %}
+    #}
 </head>
 <body class="bg-light">
 
 <main role="main" class="container">
     <div class="ny-3 p-3 bg-white rounded box-shadow">
-        <h6 class = "border-bottom border-gray p2- mb-0">Recent updates</h6>
 
         {% block body %}
         {% endblock %}
     </div>
 
 </main>
+{# For some reason, not mentioned in tutorial yet exists...
 {% block javascripts %}
     <script src="{{ asset("build/js/app.js") }}"></script>
 {% endblock %}
+#}
 </body>
 </html>

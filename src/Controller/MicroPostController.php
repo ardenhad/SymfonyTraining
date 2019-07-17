@@ -82,4 +82,32 @@ class MicroPostController
 
         return new Response($html);
     }
+
+    /*
+     * IMPORTANT
+     *  This has to be at the end because since this can take any value, including an id value = "add",
+     *  a confusion is caused and add becomes inaccessible since it would be fetched by /{id} with id = "add".
+     *  In order to solve this issue, we put it afterwards so if it is micro-post/add, then it will be caught by the route
+     *  at top otherwise, it will come here. Since this has lesser priority.
+     *
+     *  Alternatively, a requirement such as id has to be of type integer can be another solution?
+     */
+    /**
+     * @Route("/{id}", name="micro_post_post")
+     */
+    /*
+     * Symfony feature called paramConverter. Instead of passing id and looking by id...
+     */
+    public function post(MicroPost $post)
+    {
+        //... we can just pass the entity and it autoExec the bottom.(Appears in panel/doctrine)
+        //$post = $this->microPostRepository->find($id);
+
+        return new Response(
+            $this->twig->render(
+                "micro-post/post.html.twig",
+                ["post" => $post]
+            )
+        );
+    }
 }
