@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * @Route("micro-post")
@@ -51,8 +52,32 @@ class MicroPostController
     public function index()
     {
         $html = $this->twig->render("micro-post/index.html.twig", [
-            "posts" => $this->microPostRepository->findAll()
+            "posts" => $this->microPostRepository->findBy([], ["time" => "DESC"]),
         ]);
+
+        return new Response($html);
+    }
+
+
+    /**
+     * @Route("/edit/{id}", name="micro_post_edit")
+     */
+    public function edit(MicroPost $microPost, Request $request)
+    {
+        $form = $this->formFactory->create(MicroPostType::class, $microPost);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->entityManager->persist($microPost);
+            $this->entityManager->flush();
+
+            return new RedirectResponse($this->router->generate("micro_post_index"));
+        }
+
+        $html = $this->twig->render(
+            "micro-post/add.html.twig",
+            ["form" => $form->createView()]
+        );
 
         return new Response($html);
     }

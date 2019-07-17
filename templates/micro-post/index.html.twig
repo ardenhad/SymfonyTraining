@@ -7,7 +7,12 @@
     <h6 class="border-bottom border-gray pb2 mb-0">Recent updates</h6>
 
     {% for post in posts %}
-        {# "post": post stands for variable passage to the other file.#}
+        <a href="{{ path('micro_post_post', {'id': post.id }) }}">
+        {# "post": post stands for variable passage to the other file. #}
         {{ include("micro-post/raw-post.html.twig", {"post": post}) }}
+        </a>
+
+        <small class="d-block text-right mt-3">
+            <a href="{{ path('micro_post_edit', {'id': post.id }) }}">Add edit</a>
     {% endfor %}
 {% endblock %}
