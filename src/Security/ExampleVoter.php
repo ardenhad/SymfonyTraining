@@ -24,6 +24,7 @@ class ExampleVoter implements VoterInterface
      */
     public function vote(TokenInterface $token, $subject, array $attributes)
     {
-        // TODO: Implement vote() method.
+        //https://github.com/symfony/symfony/issues/30675
+        return VoterInterface::ACCESS_ABSTAIN;
     }
 }

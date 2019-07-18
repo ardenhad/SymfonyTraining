@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Routing\RouterInterface;
-use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Security\Core\Event\VoteEvent;
 
 /**
  * @Route("micro-post")
@@ -38,7 +38,7 @@ class MicroPostController
     private $flashBag;
 
     public function __construct(
-        \Twig_Environment $twig,
+        \Twig\Environment $twig,
         MicroPostRepository $microPostRepository,
         FormFactoryInterface $formFactory,
         EntityManagerInterface $entityManager,
@@ -134,7 +134,7 @@ class MicroPostController
      *  This has to be at the end because since this can take any value, including an id value = "add",
      *  a confusion is caused and add becomes inaccessible since it would be fetched by /{id} with id = "add".
      *  In order to solve this issue, we put it afterwards so if it is micro-post/add, then it will be caught by the route
-     *  at top otherwise, it will come here. Since this has lesser priority.
+     *  at top, otherwise it will come here. Since this has lesser priority.
      *
      *  Alternatively, a requirement such as id has to be of type integer can be another solution?
      */
