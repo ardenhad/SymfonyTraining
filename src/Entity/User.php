@@ -104,9 +104,25 @@ class User implements UserInterface, \Serializable
         return $this->username;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getFullName()
+    {
+        return $this->fullName;
+    }
+
     public function setEmail(string $email)
     {
         $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 
     public function eraseCredentials()
