@@ -4,6 +4,7 @@
     <list default="true" id="711ab308-87c2-4dac-9bde-d6266134d90b" name="Default Changelist" comment="(Ignore last 2 commits) Twig, filters of it and custom twig extensions.">
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/MicroPostVoter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/MicroPostVoter.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Security/MicroPostVoter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="561">
+              <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
               <folding>
                 <element signature="e#34#59#0#PHP" expanded="true" />
               </folding>
@@ -98,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/DataFixtures/AppFixtures.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="237">
-              <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+              <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
               <folding>
                 <element signature="e#36#61#0#PHP" expanded="true" />
               </folding>
@@ -209,7 +210,6 @@
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/micro-post/raw-post.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
-        <option value="$PROJECT_DIR$/src/Security/MicroPostVoter.php" />
         <option value="$PROJECT_DIR$/src/Entity/MicroPost.php" />
         <option value="$PROJECT_DIR$/templates/micro-post/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/RegisterController.php" />
@@ -217,6 +217,7 @@
         <option value="$PROJECT_DIR$/src/Security/ExampleVoter.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" />
+        <option value="$PROJECT_DIR$/src/Security/MicroPostVoter.php" />
       </list>
     </option>
   </component>
@@ -435,7 +436,7 @@
       <workItem from="1563289149874" duration="801000" />
       <workItem from="1563346098154" duration="21316000" />
       <workItem from="1563431144874" duration="22540000" />
-      <workItem from="1563518945646" duration="6030000" />
+      <workItem from="1563518945646" duration="6455000" />
     </task>
     <task id="LOCAL-00001" summary="Section 3:Services completed.">
       <created>1562942253464</created>
@@ -455,7 +456,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85081000" />
+    <option name="totallyTimeSpent" value="85506000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,9 +469,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="825" y="0" width="1102" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918434" visible="true" weight="0.2428023" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918434" visible="true" weight="0.2428023" />
       <window_info id="Structure" order="1" sideWeight="0.5008157" side_tool="true" weight="0.20897156" />
       <window_info id="Favorites" order="2" sideWeight="0.5008157" side_tool="true" weight="0.20897156" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -485,7 +485,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5153551" side_tool="true" visible="true" weight="0.16739607" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32932165" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4846827" weight="0.2286652" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.48464492" visible="true" weight="0.16739607" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.48464492" visible="true" weight="0.16739607" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -950,7 +950,7 @@
     <entry file="file://$PROJECT_DIR$/src/DataFixtures/AppFixtures.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
-          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+          <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
           <folding>
             <element signature="e#36#61#0#PHP" expanded="true" />
           </folding>
@@ -959,8 +959,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Security/MicroPostVoter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="561">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
           <folding>
             <element signature="e#34#59#0#PHP" expanded="true" />
           </folding>
