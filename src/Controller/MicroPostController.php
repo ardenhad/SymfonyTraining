@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use App\Entity\MicroPost;
+use App\Entity\User;
 use App\Repository\MicroPostRepository;
 use App\Form\MicroPostType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -153,6 +154,23 @@ class MicroPostController
 
         return new Response($html);
     }
+
+    /**
+     * @Route("/user/{username}", name="micro_post_user")
+     */
+    public function userPosts(User $userWithPosts)
+    {
+        $html = $this->twig->render("micro-post/index.html.twig", [
+//            "posts" => $this->microPostRepository->findBy(
+//                ["user" => $userWithPosts],
+//                ["time" => "DESC"]
+//            ),
+                "posts" => $userWithPosts->getPosts() //Lazy loading, goes to user object, retrieves posts.(Execs another query) Using proxies.
+        ]);
+
+        return new Response($html);
+    }
+
 
     /*
      * IMPORTANT
