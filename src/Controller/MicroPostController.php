@@ -160,13 +160,16 @@ class MicroPostController
      */
     public function userPosts(User $userWithPosts)
     {
-        $html = $this->twig->render("micro-post/index.html.twig", [
+        $html = $this->twig->render("micro-post/user-posts.html.twig",
+            [
 //            "posts" => $this->microPostRepository->findBy(
 //                ["user" => $userWithPosts],
 //                ["time" => "DESC"]
 //            ),
-                "posts" => $userWithPosts->getPosts() //Lazy loading, goes to user object, retrieves posts.(Execs another query) Using proxies.
-        ]);
+                "posts" => $userWithPosts->getPosts(), //Lazy loading, goes to user object, retrieves posts.(Execs another query) Using proxies.
+                "user" => $userWithPosts,
+            ]
+        );
 
         return new Response($html);
     }
