@@ -19,6 +19,7 @@ class RegisterController extends Controller
      */
     public function register(UserPasswordEncoderInterface $passwordEncoder, Request $request)
     {
+
         $user = new User();
 
         $form = $this->createForm(UserType::class, $user);
