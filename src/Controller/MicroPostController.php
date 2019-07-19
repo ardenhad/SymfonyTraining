@@ -8,6 +8,7 @@ use App\Repository\MicroPostRepository;
 use App\Form\MicroPostType;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,6 +17,7 @@ use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 /**
@@ -81,7 +83,7 @@ class MicroPostController
     //(Way-3 (Above))
     public function edit(MicroPost $microPost, Request $request/*, (Way-1)AuthorizationCheckerInterface $authorizationChecker*/)
     {
-        //$this->denyUnlessGranted("edit", $microPost); --> Requires Controller extension.
+        //$this->denyUnlessGranted("edit", $microPost); --> Requires AbstractController extension.
         /* (Way-2)
         if (!$this->authorizationChecker->isGranted("edit", $microPost)) {
             throw new UnauthorizedHttpException();
@@ -124,11 +126,15 @@ class MicroPostController
 
     /**
      * @Route("/add", name="micro_post_add")
+     * @Security("is_granted('ROLE_USER')")
      */
-    public function add(Request $request)
+    public function add(Request $request, TokenStorageInterface $tokenStorage)
     {
+        //$user = $this->getUser(); // If we had extended with AbstractController
+        $user = $tokenStorage->getToken()->getUser();
         $microPost = new MicroPost();
         $microPost->setTime(new \DateTime());
+        $microPost->setUser($user);
 
         $form = $this->formFactory->create(MicroPostType::class, $microPost);
         $form->handleRequest($request);

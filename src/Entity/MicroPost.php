@@ -33,7 +33,7 @@ class MicroPost
     //JoinColumn adds foreign key.
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="posts")
-     * @ORM\JoinColumn()
+     * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 
