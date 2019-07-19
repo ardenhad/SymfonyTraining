@@ -134,7 +134,7 @@ class MicroPostController
         //$user = $this->getUser(); // If we had extended with AbstractController
         $user = $tokenStorage->getToken()->getUser();
         $microPost = new MicroPost();
-        $microPost->setTime(new \DateTime());
+//        $microPost->setTime(new \DateTime());
         $microPost->setUser($user);
 
         $form = $this->formFactory->create(MicroPostType::class, $microPost);
