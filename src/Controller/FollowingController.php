@@ -16,14 +16,18 @@ class FollowingController extends Controller
 {
     /**
      * @Route("/follow/{id}", name="following_follow")
+     *
      */
     public function follow(User $userToFollow) {
         /** @var User $currentUser */
         $currentUser = $this->getUser();
 
-        $currentUser->getFollowing()->add($userToFollow);
+        if ($currentUser->getId() !== $userToFollow->getId()) {
+            $currentUser->getFollowing()->add($userToFollow);
 
-        $this->getDoctrine()->getManager()->flush();
+            $this->getDoctrine()->getManager()->flush();
+
+        }
 
         return $this->redirectToRoute(
             "micro_post_user",
