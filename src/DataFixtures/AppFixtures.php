@@ -72,7 +72,7 @@ class AppFixtures extends Fixture
 
     public function loadMicroPosts(ObjectManager $manager)
     {
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             $microPost = new MicroPost();
             $microPost->setText(self::POST_TEXT[rand(0, count(self::POST_TEXT) - 1)]);
             $date = new \DateTime();
