@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="711ab308-87c2-4dac-9bde-d6266134d90b" name="Default Changelist" comment="(Ignore last 2 commits) Twig, filters of it and custom twig extensions.">
-      <change afterPath="$PROJECT_DIR$/src/Entity/LikeNotification.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Notification.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/LikeNotificationRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/NotificationRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/NotificationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/micro-post/post.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/micro-post/post.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/LikeNotificationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LikeNotificationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/NotificationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/NotificationRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,27 +25,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190722124815.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/LikesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
-              <folding>
-                <element signature="e#36#61#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/micro-post/post.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
@@ -56,11 +33,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Notification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="730">
-              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+            <state relative-caret-position="50">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/LikeNotificationRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/NotificationRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/NotificationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+              <folding>
+                <element signature="e#36#78#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,18 +77,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="594">
               <caret line="52" selection-start-line="52" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MicroPostController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3332">
-              <caret line="212" column="22" selection-start-line="212" selection-start-column="22" selection-end-line="212" selection-end-column="22" />
-              <folding>
-                <element signature="e#35#60#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -220,6 +215,9 @@
         <option value="$PROJECT_DIR$/templates/micro-post/post.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/LikeNotification.php" />
         <option value="$PROJECT_DIR$/src/Entity/Notification.php" />
+        <option value="$PROJECT_DIR$/src/Repository/LikeNotificationRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/NotificationRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/NotificationController.php" />
       </list>
     </option>
   </component>
@@ -383,6 +381,12 @@
               <item name="UdemyTraining" type="b2602c69:ProjectViewProjectNode" />
               <item name="UdemyTraining" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UdemyTraining" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UdemyTraining" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -457,7 +461,7 @@
       <workItem from="1563518945646" duration="19243000" />
       <workItem from="1563776356668" duration="18553000" />
       <workItem from="1563865815823" duration="977000" />
-      <workItem from="1563868369571" duration="1982000" />
+      <workItem from="1563868369571" duration="3036000" />
     </task>
     <task id="LOCAL-00001" summary="Section 3:Services completed.">
       <created>1562942253464</created>
@@ -477,7 +481,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119806000" />
+    <option name="totallyTimeSpent" value="120860000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -594,20 +598,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixed: Message is now properly working.&#10;Fixed: Annotation requirement was not working due directory change." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="408" column="4" selection-start-line="408" selection-start-column="4" selection-end-line="408" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/twig/twig/src/Environment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4114">
@@ -939,9 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/NotificationRepository.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MicroPostController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3332">
@@ -1005,8 +992,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Notification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+        <state relative-caret-position="50">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/LikeNotificationRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/NotificationRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/NotificationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding>
+            <element signature="e#36#78#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
