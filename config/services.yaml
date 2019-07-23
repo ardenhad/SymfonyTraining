@@ -6,6 +6,7 @@
 parameters:
     locale: "en"
     hello_message: "Hello from service"
+    email_from: '%env(MAILER_FROM)%'
 
 services:
     # default configuration for services in *this* file
@@ -33,6 +34,9 @@ services:
         arguments:
             $locale: "%locale%"
 
+    App\Mailer\Mailer:
+        arguments:
+            $mailFrom: '%email_from%'
 
     #Required when autowire(line:11) is set to false so we are manually injecting dependencies.
     #App\Controller\BlogController: ['@App\Services\Greeting']
