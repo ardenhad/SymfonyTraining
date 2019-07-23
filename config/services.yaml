@@ -49,5 +49,9 @@ services:
             #$message = "Hello from Services" #Direct value
             #$message = "%hello_message%" #Identifier from parameters(line:6)
             #Or we can just bind(line:16) under services/defaults
+
+    App\EventListener\LikeNotificationSubscriber:
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
