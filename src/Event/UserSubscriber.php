@@ -7,6 +7,18 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class UserSubscriber implements EventSubscriberInterface
 {
+    private $mailer;
+    /**
+     * @var \Twig\Environment
+     */
+    private $twig;
+
+    public function __construct(\Swift_Mailer $mailer, \Twig\Environment $twig)
+    {
+        $this->mailer = $mailer;
+        $this->twig = $twig;
+    }
+
     /**
      * Returns an array of event names this subscriber wants to listen to.
      *
@@ -34,6 +46,16 @@ class UserSubscriber implements EventSubscriberInterface
 
     public function onUserRegister(UserRegisterEvent $event)
     {
+        $body = $this->twig->render("email/registration.html.twig", [
+            "user" => $event->getRegisteredUser()
+        ]);
 
+        $message = (new \Swift_Message())
+            ->setSubject("Welcome to micro-post app!")
+            ->setFrom("micropost@micropost.com")
+            ->setTo($event->getRegisteredUser()->getEmail())
+            ->setBody($body, "text/html");
+
+        $this->mailer->send($message);
     }
 }
