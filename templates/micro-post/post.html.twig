@@ -49,7 +49,7 @@
         function addOnClick(button, oppositeButton, likeCount, path) {
             button.addEventListener('click', function (event) {
                 {% if not app.user %}
-                return window.location.replace('{{ path('user_register') }}');
+                    return window.location.replace('{{ path('user_register') }}');
                 {% endif %}
 
                 button.disabled = true;
