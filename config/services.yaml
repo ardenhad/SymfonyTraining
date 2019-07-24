@@ -65,6 +65,9 @@ services:
             - !service {class: PDO, factory: "database_connection:getWrappedConnection"}
             - { lock_mode: 1 } #Fixes 'There is already a transaction' after session transaction to db.
 
+    App\Event\UserSubscriber:
+        $defaultLocale: '%kernel.default_locale%'
+
     App\Event\LocaleSubscriber:
         arguments:
             - "%kernel.default_locale%"
