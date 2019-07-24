@@ -19,7 +19,7 @@ class Mailer
     /**
      * @var string
      */
-    private $mailFrom;
+    private $mailFrom = 'aaa@dugun.com';
 
     public function __construct(\Swift_Mailer $mailer, \Twig\Environment $twig, string $mailFrom)
     {
@@ -30,6 +30,7 @@ class Mailer
 
     public function sendConfirmationMail(User $user)
     {
+
         $body = $this->twig->render("email/registration.html.twig", [
             "user" => $user
         ]);

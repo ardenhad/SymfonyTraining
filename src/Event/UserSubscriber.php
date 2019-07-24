@@ -43,6 +43,6 @@ class UserSubscriber implements EventSubscriberInterface
 
     public function onUserRegister(UserRegisterEvent $event)
     {
-        $this->mailer->sendConfirmationEmail($event->getRegisteredUser());
+        $this->mailer->sendConfirmationMail($event->getRegisteredUser());
     }
 }
